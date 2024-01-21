@@ -46,3 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update data every 5 seconds
     setInterval(updateData, 10000); // 5000 milliseconds (5 seconds)
 });
+
+function showBox(boxId) { 
+    // Reset all boxes to default state
+    document.querySelectorAll('.box').forEach(box => {
+        box.style.animation = 'none';
+    });
+
+    // Apply animation to the selected box
+    const selectedBox = document.getElementById(boxId);
+    selectedBox.style.animation = 'boxAnimation 0.8s';
+}

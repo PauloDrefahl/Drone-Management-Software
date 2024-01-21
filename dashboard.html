@@ -12,24 +12,27 @@
 
     <div class="navbar">
         <nav>
-            <h1>Drone Management System</h1>
-            <p>Florida Gulf Coast University<p>
+            <button class="nav-button" onclick="showBox('droneCameraBox')" style="margin-left: 10%;">Drone Camera</button>
+            <button class="nav-button" onclick="showBox('settingsBox')">Settings</button>
+            <h1>Drone Management System <p>Florida Gulf Coast University<p></p></h1>
+            <button class="nav-button" onclick="showBox('droneInfoBox')">Drone Information</button>
+            <button class="nav-button" onclick="showBox('networkTerminalBox')" style="margin-right: 10%;">Network Terminal</button>
         </nav>
     </div>
 
     <div class="grid-container">
-        <div class="box" style="padding: 0%;">
+        <div class="box"  id="droneCameraBox" style="padding: 0%;">
             <div class="overlay-div"><p class="overlay-text"></p>DRONE CAMERA</div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/h2ws031l_Ak?si=igv6yviapLLXca4D&amp;start=3&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" ></iframe>            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/h2ws031l_Ak?si=igv6yviapLLXca4D&amp;start=3&autoplay=1&mute=1&controls=0&loop=1" title="YouTube video player" frameborder="0" ></iframe>            
         </video>
       
         </div>
         
-        <div class="big-box" style="padding: 2px;">
+        <div class="big-box" id="droneTrackingMapBox" style="padding: 2px; height: 100%;">
             <div class="overlay-div"><p class="overlay-text"></p>DRONE TRACKING MAP</div>
             <div id="map"></div>
         </div>
-        <div class="box with-scroll">
+        <div class="box with-scroll"  id="droneInfoBox">
             <div class="overlay-div"><p class="overlay-text"></p>DRONE INFORMATION</div>
             <form class="black-box">
                 <!-- Add your drone information boxes here -->
@@ -73,11 +76,11 @@
                 <!-- Add more drone information boxes as needed -->
             </form>
         </div>
-        <div class="box" style="padding: 0px;">
-            <div class="overlay-div" ><p class="overlay-text"></p>NETWORK TERMINAL</div>
+        <div class="box"  id="settingsBox" style="padding: 0px; height: 100%;">
+            <div class="overlay-div" ><p class="overlay-text"></p>SETTINGS</div>
         </div>
 
-        <div class="box" style="padding-top: 0px; padding-bottom: 0px; padding: 0px;">
+        <div class="box" id="networkTerminalBox" style="padding-top: 0px; padding-bottom: 0px; padding: 0px; height: 100%;">
             <div class="overlay-div" ><p class="overlay-text"></p>NETWORK TERMINAL</div>
             <div class="terminal-box" style="border-top: none; border-bottom: none;">
                 <ul id="terminal-list" style="text-align: left; list-style-type: none;">
@@ -89,7 +92,7 @@
     </div>
 
     <footer>
-        <p>Developed By <a href="https://github.com/PauloDrefahl" target="_blank">Paulo Drefahl</a> ℗</p>
+        <p style="margin-left: 15px; margin-top: 0;">Developed By <a href="https://github.com/PauloDrefahl" target="_blank">Paulo Drefahl</a> ℗</p>
     </footer>
 
     <script>

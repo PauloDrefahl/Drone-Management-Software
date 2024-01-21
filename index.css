@@ -16,6 +16,9 @@ nav h1{
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #000000;
     color: #fff;
     position: fixed;
@@ -25,6 +28,26 @@ nav {
     text-align: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     border-bottom: 7px solid rgb(40, 160, 40);
+}
+
+.nav-button {
+    background-color: #4CAF50;
+    text-shadow: 0.2px 0.2px 0.2px #524f4f;
+    color: #fff;
+    border: 3px solid #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 10%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #46f146;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 .navbar {
@@ -42,7 +65,9 @@ nav {
     height: calc(100vh - 200px); /* Adjusted margin-top to 200px */
     margin-top: 180px;
     overflow: hidden;
-    max-height: 700px;
+    max-height: 720px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .box {
@@ -258,3 +283,8 @@ pre{
     top: 50%;
     left: 50%;
   }
+
+  @keyframes boxAnimation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
