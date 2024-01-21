@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+nav {
+    background-color: #000000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 7px solid rgb(40, 160, 40);
+}
+
+.navbar {
+    display: inline-block;
+    margin-top: 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 45%);
+    height: calc(100vh - 200px); /* Adjusted margin-top to 200px */
+    margin-top: 200px;
+    overflow: hidden;
+}
+
+.box {
+    margin: 20px;
+    border: 3px solid #ccc;
+    background-color: #e0e0e0; /* Lighter color palette */
+    padding: 40px;
+    text-align: center;
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.big-box {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    background-color: #d9d9d9; /* Lighter color palette */
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.big-box:hover {
+    transform: scale(1.05);
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.with-scroll {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.black-box {
+    background-color: #d9d9d9; /* Lighter color palette */
+    color: #000; /* Adjusted text color */
+    padding: 20px;
+    flex: 1;
+    padding: 60px;
+    padding-top: 30px;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.drones-ft {
+    width: 40%;
+    height: auto;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.bat-ft {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+/* Add styles for drone information boxes */
+.drone-info-box {
+    border: 5px solid rgb(3, 126, 3);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    max-height: 160px;
+    background-color: white;
+}
+
+.drone-info-box:hover {
+    transform: scale(1.05);
+}
+
+.drone-picture {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.drone-info-box p{
+    margin: 5px;
+}
+
+.drone-details {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.drone-details h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Customize the scroll bar to match Box 3 colors */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(3, 126, 3);
+    border-radius: 10px;
+}
+
+/* Add additional CSS styles for each box if needed */
+.box:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+.box:nth-child(even) {
+    background-color: #d9d9d9; /* Lighter color palette */
+}
+
+/* Additional styles for the terminal box */
+.terminal-box {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: #000000; /* White background */
+    color: #333; /* Text color */
+    padding: 20px;
+    border: 6px solid rgb(7, 155, 7);
+    border-radius: 10px;
+    display: flex; /* Use flex display */
+    align-items: flex-start; /* Align content to the start (left) */
+    height: auto;
+    min-height: 300px;
+}
+
+.terminal {
+    font-family: 'Courier New', monospace;
+    font-size: 1.3em;
+    text-align: left;
+    border: 1px solid black;
+}
+
+pre{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.command {
+    color: rgb(25, 189, 25); /* Command text color */
+}
+
+.output {
+    color: #ffffff; /* Output text color */
+}
+
+
+
+.command::before,
+.output::before {
+    content: '>'; /* Add > before each list item */
+    color: rgb(3, 126, 3); /* Set color for > symbol */
+    margin-right: 5px; /* Adjust spacing */
+    display: inline-block; /* Ensure the > appears inline with the text */
+}
+
+.overlay-div {
+    position:  relative; 
+    width: 100%;
+    background-color: white; /* Set background color for the div */
+    height: 50px; /* Set the height of the div */
+    border-bottom: 3px solid #000;
+    text-align: center;
+    color: rgb(3, 126, 3); /* Set text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Set z-index to 1 to ensure the div appears above the image */
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold;
+    min-height: 50px;
+  }
+
+  /* Style for the text overlay */
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
