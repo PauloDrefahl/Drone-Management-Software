@@ -335,7 +335,10 @@ pre{
 
   @keyframes boxAnimation {
     0% { transform: scale(1); }
-    100% { transform: scale(1.05); }
+    50% {
+        transform: scale(1.05);
+    }
+    100% { transform: scale(1); }
 }
 
 
@@ -350,3 +353,15 @@ pre{
     width: fit-content;
     margin-bottom: 25%;
 }
+
+@keyframes borderColorChange {
+    0% {
+      border-color: #ccc; /* Start with the current border color */
+    }
+    50% {
+      border-color: rgb(3, 126, 3); /* Change to a desired color (e.g., red) */
+    }
+    100% {
+      border-color: #ccc; /* Return to the original border color */
+    }
+  }

@@ -67,5 +67,5 @@ function showBox(boxId) {
 
     // Apply animation to the selected box
     const selectedBox = document.getElementById(boxId);
-    selectedBox.style.animation = 'boxAnimation 0.8s';
+    selectedBox.style.animation = 'boxAnimation 2s ease-in-out, borderColorChange 2s ease-in-out';
 }

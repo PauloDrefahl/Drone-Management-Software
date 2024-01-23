@@ -8,18 +8,37 @@
             z-index: 2; /* Set a higher z-index to overlay the image on top */
         }
 
+        #movingImage2{
+            position: absolute;
+            top: 75%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            width: 70px; /* Adjust the width of your image */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 2; /* Set a higher z-index to overlay the image on top */
+        }
+
         /* Optional: Add styles for other elements in the container *
 
         /* Optional: Add animation styles */
         @keyframes moveAround {
-            0% { transform: translate(-50%, -50%); }
-            25% { transform: translate(-50%, -50%) translate(50px, 0); }
-            50% { transform: translate(-50%, -50%) translate(50px, 50px); }
-            75% { transform: translate(-50%, -50%) translate(0, 50px); }
-            100% { transform: translate(-50%, -50%); }
+            0% { transform: translate(-90%, -90%); }
+            25% { transform: translate(-90%, -90%) translate(120px, 0); }
+            50% { transform: translate(-90%, -90%) translate(120px, 120px); }
+            75% { transform: translate(-90%, -90%) translate(0, 120px); }
+            100% { transform: translate(-90%, -90%); }
+        }
+
+        @keyframes moveAround2 {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(-150%) translateY(-150px); }
         }
 
         /* Optional: Apply animation to the image */
         #movingImage.animating {
-            animation: moveAround 4s linear infinite;
+            animation: moveAround 40s linear infinite;
+        }
+
+        #movingImage2.animating{
+            animation: moveAround2 40s linear infinite;
         }

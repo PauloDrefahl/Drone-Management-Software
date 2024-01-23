@@ -34,7 +34,7 @@
         
         <div class="big-box" id="droneTrackingMapBox" style="padding: 2px; height: 100%;">
             <div class="overlay-div"><img src="map-solid.svg"><p class="overlay-text"></p>DRONE TRACKING MAP</div>
-            <img id="movingImage" src="drone.png" alt="Moving Image"> <div id="map" style="max-height: 92%;"></div>
+            <img id="movingImage" src="drone.png" alt="Moving Image"> <img id="movingImage2" src="drone.png" alt="Moving Image"> <div id="map" style="max-height: 92%;"></div>
             <div class="overlay-div" id="connect-button-div"><button onclick="toggleAnimation(); ChangeStatus()"  class="nav-button" id="connect-button"><span>Display drones: <spam id="status">OFF<span><span></button></div>
         </div>
         <div class="box with-scroll"  id="droneInfoBox">
@@ -131,6 +131,12 @@
                 
                     <div class="settingsCard" id="cam-sensor">
                         <h3 class="settingsHeading">Camera and Sensors</h3>
+                        <select class="settingsSelect" onchange="changeCameraResolution()">
+                            <option value="720p">Drone1</option>
+                            <option value="1080p">Drone2</option>
+                            <option value="4k">Drone3</option>
+                            <option value="8k">Drone4</option>
+                        </select>
                         <select class="settingsSelect" onchange="changeCameraResolution()">
                             <option value="720p">720p</option>
                             <option value="1080p">1080p</option>
