@@ -2,38 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="x-icon" href="fgcu-logo.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Layout Example</title>
+    <title>Drone Management Software</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_up35VGH_4e_fgN9WmzD-C6yj8sto3hE&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="settings.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_up35VGH_4e_fgN9WmzD-C6yj8sto3hE&callback=initMap" async defer></script> 
     <script src="index.js"></script>
 </head>
 <body>
 
     <div class="navbar">
         <nav>
-            <button class="nav-button" onclick="showBox('droneCameraBox')" style="margin-left: 10%;">Drone Camera</button>
-            <button class="nav-button" onclick="showBox('settingsBox')">Settings</button>
-            <h1>Drone Management System <p>Florida Gulf Coast University<p></p></h1>
-            <button class="nav-button" onclick="showBox('droneInfoBox')">Drone Information</button>
-            <button class="nav-button" onclick="showBox('networkTerminalBox')" style="margin-right: 10%;">Network Terminal</button>
+            <button class="nav-button" onclick="showBox('droneCameraBox')" style="margin-left: 10%;"> <span><img src="camera-solid.svg">Drone Camera<span></button>
+            <button class="nav-button" onclick="showBox('settingsBox')"><span><img src="gear-solid.svg">Settings</button>
+            <h1 class="brand"><p>Drone Management System<p><div class="logo-container"><p>Florida Gulf Coast University</p> <img src="fgcu-logo.png"></h1>
+            <button class="nav-button" onclick="showBox('droneInfoBox')"><span><img src="circle-info-solid.svg">Drone details</button>
+            <button class="nav-button" onclick="showBox('networkTerminalBox')" style="margin-right: 10%;"><span><img src="terminal-solid.svg">Drone Terminal</button>
         </nav>
     </div>
 
     <div class="grid-container">
         <div class="box"  id="droneCameraBox" style="padding: 0%;">
-            <div class="overlay-div"><p class="overlay-text"></p>DRONE CAMERA</div>
+            <div class="overlay-div"><img src="camera-solid-green.svg"></p>DRONE CAMERA</div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/h2ws031l_Ak?si=igv6yviapLLXca4D&amp;start=3&autoplay=1&mute=1&controls=0&loop=1" title="YouTube video player" frameborder="0" ></iframe>            
-        </video>
+            </video>
       
         </div>
         
         <div class="big-box" id="droneTrackingMapBox" style="padding: 2px; height: 100%;">
-            <div class="overlay-div"><p class="overlay-text"></p>DRONE TRACKING MAP</div>
+            <div class="overlay-div"><img src="map-solid.svg"><p class="overlay-text"></p>DRONE TRACKING MAP</div>
             <div id="map"></div>
         </div>
         <div class="box with-scroll"  id="droneInfoBox">
-            <div class="overlay-div"><p class="overlay-text"></p>DRONE INFORMATION</div>
+            <div class="overlay-div"><img src="circle-info-solid green.svg"><p class="overlay-text"></p>DRONE INFORMATION</div>
             <form class="black-box">
                 <!-- Add your drone information boxes here -->
                 <div class="drone-info-box">
@@ -77,24 +79,74 @@
             </form>
         </div>
         <div class="box"  id="settingsBox" style="padding: 0px; height: 100%;">
-            <div class="overlay-div" ><p class="overlay-text"></p>SETTINGS</div>
+            <div class="overlay-div" ><img src="gear-solid green.svg"><p class="overlay-text"></p>SETTINGS</div>
+                <div id="settingsContainer">
+                    <!-- Buttons and UI widgets for drone settings -->
+                    
+
+                    <!-- Altitude and Speed settings -->
+                    <div class="settingsCard">
+                        <h3>Altitude Settings</h3>
+                        <label>Maximum Altitude: <input type="number" id="maxAltitude" min="0" max="500" step="10"> meters</label>
+                        <label>Minimum Altitude: <input type="number" id="minAltitude" min="0" max="500" step="10"> meters</label>
+                        <button class="settingsButton" onclick="configureFlightParameters()">Submit Altitute Settings</button>
+                    </div>
+
+                    <div class="settingsCard">
+                        <h3>Speed Settings</h3>
+                        <label>Maximum Speed: <input type="number" id="maxSpeed" min="0" max="100" step="5"> km/h</label>
+                        <label>Minximum Speed: <input type="number" id="minSpeed" min="0" max="100" step="5"> km/h</label>
+                        <button class="settingsButton" onclick="configureFlightParameters()">Submit Altitute Settings</button>
+                    </div>
+
+                    <!-- Rotation and GPS Coordinates settings -->
+                    <div class="settingsCard">
+                        <h3>Rotation Settings</h3>
+                        <label>Rotation Angle: <input type="number" id="rotationAngle" min="0" max="360" step="1"> degrees</label>
+                        <button class="settingsButton" onclick="configureFlightParameters()">Submit Altitute Settings</button>
+                    </div>
+
+                    <div class="settingsCard">
+                        <h3>GPS Coordinates</h3>
+                        <label>Latitude: <input type="text" id="latitude"></label>
+                        <label>Longitude: <input type="text" id="longitude"></label>
+                        <button class="settingsButton" onclick="configureFlightParameters()">Submit Altitute Settings</button>
+                    </div>
+
+
+                    <div class="settingsCard">
+                        <h3 class="settingsHeading">Geofencing</h3>
+                        <label>Enable Geofencing<input type="checkbox" class="settingsCheckbox" onclick="toggleGeofencing()"></label>
+                        <button class="settingsButton" onclick="configureGeofence()">Configure Geofence</button>
+                    </div>
+                
+                    <div class="settingsCard">
+                        <h3 class="settingsHeading">Battery Management</h3>
+                        <input type="range" min="0" max="100" value="50" class="settingsSlider slider" oninput="updateBatteryThreshold()">
+                        <p>Battery Threshold: <span id="batteryThreshold">50%</span></p>
+                    </div>
+                
+                    <div class="settingsCard" id="cam-sensor">
+                        <h3 class="settingsHeading">Camera and Sensors</h3>
+                        <select class="settingsSelect" onchange="changeCameraResolution()">
+                            <option value="720p">720p</option>
+                            <option value="1080p">1080p</option>
+                            <option value="4k">4k</option>
+                        </select>
+                </div>
+            </div>
         </div>
 
         <div class="box" id="networkTerminalBox" style="padding-top: 0px; padding-bottom: 0px; padding: 0px; height: 100%;">
-            <div class="overlay-div" ><p class="overlay-text"></p>NETWORK TERMINAL</div>
+            <div class="overlay-div" ><img src="terminal-solid green.svg"><p class="overlay-text"></p>NETWORK TERMINAL</div>
             <div class="terminal-box" style="border-top: none; border-bottom: none;">
                 <ul id="terminal-list" style="text-align: left; list-style-type: none;">
                     <!-- List items will be generated by the script -->
                 </ul>
             </div>
         </div>
-        
+        <p style="margin-left: 15px; margin-top: 7%;">Developed By <a href="https://github.com/PauloDrefahl" target="_blank">Paulo Drefahl</a> ℗</p>    
     </div>
-
-    <footer>
-        <p style="margin-left: 15px; margin-top: 0;">Developed By <a href="https://github.com/PauloDrefahl" target="_blank">Paulo Drefahl</a> ℗</p>
-    </footer>
-
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {

@@ -1,4 +1,6 @@
 // generateData.js
+var NumOfPings = 0;
+var maxUpdates = 5; // Set your desired limit here
 
 document.addEventListener("DOMContentLoaded", function () {
     // Get the terminal list
@@ -34,17 +36,27 @@ document.addEventListener("DOMContentLoaded", function () {
         terminalList.appendChild(listItem);
     }
 
+    var updateCounter = 0;
+
     // Generate and add new drone data every 5 seconds
     function updateData() {
-        var newData = generateDroneData();
-        addToTerminalList(newData);
+        if (updateCounter < maxUpdates) {
+            var newData = generateDroneData();
+            addToTerminalList(newData);
+            updateCounter++;
+
+            // If the limit is reached, you can stop further updates
+            if (updateCounter === maxUpdates) {
+                clearInterval(updateInterval);
+            }
+        }
     }
 
-    // Update data initially
-    updateData();
 
+    updateData();
+    var updateInterval = setInterval(updateData, 10000);
+    // Update data initially
     // Update data every 5 seconds
-    setInterval(updateData, 10000); // 5000 milliseconds (5 seconds)
 });
 
 function showBox(boxId) { 
