@@ -30,8 +30,10 @@ nav p{
 }
 
 nav span{
+    position: relative;
     display: inline-block;
     vertical-align: bottom;
+    overflow: hidden;
 }
 
 nav {

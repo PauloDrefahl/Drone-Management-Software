@@ -97,6 +97,20 @@
 .settingsCard input{
     border: #4CAF50 2px solid;
 }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
 
+  .blinking-icon {
+    width: 5%;
+    height: auto;
+    animation: blink 3s infinite; /* 1s duration, infinite loop */
+  }
 
+  .blinking-icon img{
+    width: 50%;
+    height: 50%;
+    display: block;
+  }
 

@@ -12,21 +12,21 @@
     <script src="index.js"></script>
     <script src="animations.js"></script>
 </head>
-<body>
+<body onload="toggleAnimation(); ChangeStatus()">
 
     <div class="navbar">
         <nav>
-            <button class="nav-button" onclick="showBox('droneCameraBox')" style="margin-left: 10%;"> <span><img src="camera-solid.svg">Drone Camera<span></button>
+            <button class="nav-button" onclick="showBox('droneCameraBox')" style="margin-left: 10%;"> <span><img src="camera-solid.svg">Camera<span></button>
             <button class="nav-button" onclick="showBox('settingsBox')"><span><img src="gear-solid.svg">Settings</button>
             <h1 class="brand"><p>Drone Management System<p><div class="logo-container"><p>Florida Gulf Coast University</p> <img src="fgcu-logo.png"></h1>
-            <button class="nav-button" onclick="showBox('droneInfoBox')"><span><img src="circle-info-solid.svg">Drone details</button>
-            <button class="nav-button" onclick="showBox('networkTerminalBox')" style="margin-right: 10%;"><span><img src="terminal-solid.svg">Drone Terminal</button>
+            <button class="nav-button" onclick="showBox('droneInfoBox')"><span><img src="circle-info-solid.svg">Details</button>
+            <button class="nav-button" onclick="showBox('networkTerminalBox')" style="margin-right: 10%;"><span><img src="terminal-solid.svg">Terminal</button>
         </nav>
     </div>
 
     <div class="grid-container">
         <div class="box"  id="droneCameraBox" style="padding: 0%;">
-            <div class="overlay-div"><img src="camera-solid-green.svg"></p>DRONE CAMERA</div>
+            <div class="overlay-div"><img src="camera-solid-green.svg"></p>DRONE CAMERA <div class="blinking-icon" style="margin-left: 5px"><img src="record.svg"></div></div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/h2ws031l_Ak?si=igv6yviapLLXca4D&amp;start=3&autoplay=1&mute=1&controls=0&loop=1" title="YouTube video player" frameborder="0" ></iframe>            
             </video>
       
@@ -34,7 +34,11 @@
         
         <div class="big-box" id="droneTrackingMapBox" style="padding: 2px; height: 100%;">
             <div class="overlay-div"><img src="map-solid.svg"><p class="overlay-text"></p>DRONE TRACKING MAP</div>
-            <img id="movingImage" src="drone.png" alt="Moving Image"> <img id="movingImage2" src="drone.png" alt="Moving Image"> <div id="map" style="max-height: 92%;"></div>
+            <img id="movingImage" src="drone1.png" alt="Moving Image"> 
+            <img id="movingImage2" src="drone2.png" alt="Moving Image">
+            <img id="movingImage3" src="drone3.png" alt="Moving Image"> 
+            <img id="movingImage4" src="drone4.png" alt="Moving Image"> 
+            <div id="map" style="max-height: 92%;"></div>
             <div class="overlay-div" id="connect-button-div"><button onclick="toggleAnimation(); ChangeStatus()"  class="nav-button" id="connect-button"><span>Display drones: <spam id="status">OFF<span><span></button></div>
         </div>
         <div class="box with-scroll"  id="droneInfoBox">

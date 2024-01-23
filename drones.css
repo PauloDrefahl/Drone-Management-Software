@@ -18,6 +18,26 @@
             z-index: 2; /* Set a higher z-index to overlay the image on top */
         }
 
+        #movingImage3{
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px; /* Adjust the width of your image */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 2; /* Set a higher z-index to overlay the image on top */
+        }
+
+        #movingImage4{
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px; /* Adjust the width of your image */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 2; /* Set a higher z-index to overlay the image on top */
+        }
+
         /* Optional: Add styles for other elements in the container *
 
         /* Optional: Add animation styles */
@@ -34,6 +54,19 @@
             50% { transform: translateY(-150%) translateY(-150px); }
         }
 
+        @keyframes moveAround3 {
+            0%, 100% { transform: translateX(-50%); }
+            50% { transform: translateX(-150%) translateX(-150px); }
+        }
+
+        @keyframes moveAround4 {
+            0% { transform: translate(-90%, -90%); }
+            25% { transform: translate(-90%, -90%) translate(0, 120px); }
+            50% { transform: translate(-90%, -90%) translate(120px, 120px); }
+            75% { transform: translate(-90%, -90%) translate(120px, 0); }
+            100% { transform: translate(-90%, -90%); }
+        }
+        
         /* Optional: Apply animation to the image */
         #movingImage.animating {
             animation: moveAround 40s linear infinite;
@@ -41,4 +74,12 @@
 
         #movingImage2.animating{
             animation: moveAround2 40s linear infinite;
+        }
+
+        #movingImage3.animating{
+            animation: moveAround3 40s linear infinite;
+        }
+
+        #movingImage4.animating{
+            animation: moveAround4 40s linear infinite;
         }
