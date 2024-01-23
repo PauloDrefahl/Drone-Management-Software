@@ -1,0 +1,25 @@
+        #movingImage {
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            width: 70px; /* Adjust the width of your image */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 2; /* Set a higher z-index to overlay the image on top */
+        }
+
+        /* Optional: Add styles for other elements in the container *
+
+        /* Optional: Add animation styles */
+        @keyframes moveAround {
+            0% { transform: translate(-50%, -50%); }
+            25% { transform: translate(-50%, -50%) translate(50px, 0); }
+            50% { transform: translate(-50%, -50%) translate(50px, 50px); }
+            75% { transform: translate(-50%, -50%) translate(0, 50px); }
+            100% { transform: translate(-50%, -50%); }
+        }
+
+        /* Optional: Apply animation to the image */
+        #movingImage.animating {
+            animation: moveAround 4s linear infinite;
+        }

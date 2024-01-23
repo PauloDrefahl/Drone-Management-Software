@@ -7,8 +7,10 @@
     <title>Drone Management Software</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="drones.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_up35VGH_4e_fgN9WmzD-C6yj8sto3hE&callback=initMap" async defer></script> 
     <script src="index.js"></script>
+    <script src="animations.js"></script>
 </head>
 <body>
 
@@ -32,7 +34,8 @@
         
         <div class="big-box" id="droneTrackingMapBox" style="padding: 2px; height: 100%;">
             <div class="overlay-div"><img src="map-solid.svg"><p class="overlay-text"></p>DRONE TRACKING MAP</div>
-            <div id="map"></div>
+            <img id="movingImage" src="drone.png" alt="Moving Image"> <div id="map" style="max-height: 92%;"></div>
+            <div class="overlay-div" id="connect-button-div"><button onclick="toggleAnimation(); ChangeStatus()"  class="nav-button" id="connect-button"><span>Display drones: <spam id="status">OFF<span><span></button></div>
         </div>
         <div class="box with-scroll"  id="droneInfoBox">
             <div class="overlay-div"><img src="circle-info-solid green.svg"><p class="overlay-text"></p>DRONE INFORMATION</div>

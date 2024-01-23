@@ -17,7 +17,7 @@ p{
 
 nav button span{
     display: inline-block;
-    overflow: hidden;
+    overflow: hi;
     max-height: 21px;
 }
 
@@ -138,9 +138,6 @@ video{
     transition: transform 0.3s ease-in-out;
 }
 
-.big-box:hover {
-    transform: scale(1.05);
-}
 
 .box:hover {
     transform: scale(1.05);
@@ -339,4 +336,17 @@ pre{
   @keyframes boxAnimation {
     0% { transform: scale(1); }
     100% { transform: scale(1.05); }
+}
+
+
+#connect-button-div{
+    background-color: transparent;
+    border: none;
+}
+
+#connect-button{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 25%;
 }
